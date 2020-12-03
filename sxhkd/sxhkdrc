@@ -1,0 +1,99 @@
+alt + Escape
+	pkill -USR1 -x sxhkd
+
+# quit/restart bspwm
+alt + shift + {q,r}
+	{sh ~/.config/scripts/powermenu.sh,bspc wm -r}
+
+# close and kill
+alt + w
+	bspc node -c
+
+# alternate between the tiled and monocle layout
+alt + m
+	bspc desktop -l next
+
+# state
+alt + shift + {t,s,f}
+	bspc node -t {tiled,floating,fullscreen}
+
+# set the node flags
+alt + ctrl + {s,x,d,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# FOCUS/SWAP
+
+# focus the node in the given direction
+alt + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# focus the next/previous node in the current desktop
+alt + {_,shift + }n
+	bspc node -f {next,prev}.local
+
+# focus the next/previous desktop in the current monitor
+alt + {i,o}
+	bspc desktop -f {prev,next}.local
+
+# focus or send to the given desktop
+alt + {_,shift + }{1-4}
+	bspc {desktop -f,node -d} focused:'^{1-4}'
+
+# PRESELECT
+# preselect the direction
+alt + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+alt + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+alt + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+alt + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+# MOVE/RESIZE
+
+#increase window size
+ctrl + shift + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# APPLICATION KEYBINDINGS (Super + Alt + Key)
+
+# terminal emulator
+alt + Return
+	urxvt
+
+# launch musikcube
+alt + r
+	urxvt -e musikcube
+
+# launch browser
+ alt + b
+	firefox
+
+# launch newsboat feed reeder
+ alt + n
+	urxvt -e newsboat
+
+# launch ranger
+alt + f
+	urxvt -e ranger
+
+# run program launcher
+alt + p
+	dmenu_run -fn "terminus-medium-r-*-*-*-*" -nb "#fbf1c7" -nf "#3c3836" -sb "#cc241d" -sf "#e4ede4"
+
+#common programs
+alt + shift + p
+	sh ~/.config/scripts/programs.sh
+
+#hipster terminal torrent program
+alt + t
+	urxvt -e tremc
+
+

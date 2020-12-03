@@ -1,0 +1,57 @@
+[colors]
+background = #282828
+foreground = ebdbb2
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+
+[bar/bar]
+
+font-0 = "Terminus (TTF):pixelsize=14;2"
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+wm-restack = bspwm
+
+fixed-center = true
+width = 100%
+height = 30
+background = #f2e5bc
+foreground = #3c3836
+
+modules-left = bspwm title
+modules-center = date
+modules-right = cpu memory 
+
+
+[module/bspwm]
+type = internal/bspwm
+label-focused-foreground = ${colors.primary}
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %A, %d %B %k:%M 
+
+[module/title]
+type = internal/xwindow
+# format-background = #f00
+format-foreground = ${colors.foreground
+format-padding = 1
+label-maxlen = 50
+label = %title%
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> 
+format-padding = 1
+label = CPU %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 3
+format = <label>
+label = RAM %percentage_used%%
+margin-right = 5
+
