@@ -59,7 +59,7 @@ alt + ctrl + shift + space
 # MOVE/RESIZE
 
 #increase window size
-ctrl + shift + {h,j,k,l}
+alt + shift + {h,j,k,l}
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
 # APPLICATION KEYBINDINGS (Super + Alt + Key)
