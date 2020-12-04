@@ -96,4 +96,8 @@ alt + shift + p
 alt + t
 	urxvt -e tremc
 
+#screenshot
+Print
+	scrot -q 100 '%y-%m-%d-%H-%M-%S.png' -e 'mv $f $m /home/cirno/Pictures/Screenshots
+
 
