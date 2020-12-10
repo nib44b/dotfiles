@@ -97,7 +97,17 @@ alt + t
 	urxvt -e tremc
 
 #screenshot
-Print
-	scrot -q 100 '%y-%m-%d-%H-%M-%S.png' -e 'mv $f $m /home/cirno/Pictures/Screenshots
+@Print
+	scrot -q 60 '%y-%m-%d-%H-%M-%S.png' -e 'mv $f $m /home/cirno/Pictures/Screenshots'
+
+#screenshot but cooler
+shift + @Print
+	scrot -s -q 60 '%y-%m-%d-%H-%M-%S.png' -e 'mv $f $m /home/cirno/Pictures/Screenshots'
+
+# Change volume
+XF86Audio{Raise,Lower}Volume
+	pulseaudio-ctl {up,down} 2
+
+
 
 
