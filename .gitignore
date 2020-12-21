@@ -25,3 +25,5 @@ glib-2.0
 user-dirs.dirs
 user-dirs.locale
 Debauchee
+pulseaudio-ctl/config
+tint2/tint2rc
