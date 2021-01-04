@@ -27,11 +27,9 @@ font-3 = "Font Awesome 5 Brands Regular:size=14;2"
 font-4 = "DejaVu Sans Mono:size=30;2"
 modules-left =  bspwm space xwindow 
 modules-center = 
-modules-right = space eth space  pulseaudio space  date
+modules-right = mpd space eth space  pulseaudio space  date
 border-size = 3
 border-color = #a9b1d6
-tray-position = right
-tray-padding = 2
 wm-restack = bspwm
 override-redirect = false
 scroll-up = bspwm-desknext
@@ -103,6 +101,14 @@ bar-volume-fill-font = 0
 bar-volume-empty = |
 bar-volume-empty-font = 0
 bar-volume-empty-foreground = #666
+
+
+[module/mpd]
+type = internal/mpd
+host = 127.0.0.1
+port = 6600
+label-offline = %{T5}|%{T-} Offline
+label-song = %{T5}|%{T-} playing: %artist% - %title%
 
 
 

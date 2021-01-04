@@ -74,7 +74,7 @@ alt + Return
 
 # launch musikcube
 alt + r
-	urxvt -e musikcube
+	urxvt -e ncmpcpp
 
 # launch browser
  alt + b
